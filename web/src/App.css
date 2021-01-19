@@ -1,0 +1,27 @@
+.makeRed {
+  color: red;
+}
+
+.makeYellow {
+  color: yellow;
+}
+
+.makeGreen {
+  color: green;
+}
+
+.hoverColor:hover {
+  color: green;
+}
+
+.makeblue {
+  color: blue;
+}
+
+.makePurple {
+  color: purple;
+}
+
+.sizer {
+  width: 200px;
+}
