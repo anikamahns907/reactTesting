@@ -105,3 +105,78 @@
   top: -225px;
   text-align: center;
 }
+
+/* Mac Miller Section */
+.macMillerOuterDiv {
+  width: 100%;
+  /*centering stuff*/
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.headerDivOuter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-direction: column;
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+.headerDiv {
+  width: 100%;
+  /*making a row*/
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.headerText {
+  /*centering stuff*/
+  width: 90%;
+  text-align: center;
+}
+
+.mainMacHeaderS,
+.subtitleMacS {
+  margin: 0px;
+}
+
+.outerDivForImg {
+  width: 10%;
+}
+.logoImS {
+  width: 30%;
+}
+
+.buttonDiv {
+  width: 100%;
+  /*centering stuff*/
+  display: flex;
+  justify-content: center;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.menuText {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.menuText:hover {
+  color: grey;
+}
+
+.displayingContent {
+  /*centering stuff*/
+  display: flex;
+  justify-content: center;
+}
+.marginsForLyrics {
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
+}

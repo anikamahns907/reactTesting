@@ -13,8 +13,8 @@ class VidTextPic extends React.Component {
 typeOfDisplay(typeOf){
     if (typeOf === "Video") {
         return(
-        <div>
-            <iframe className = "forDisplays" width="560" height="315" src="https://www.youtube.com/embed/dEM7tiOym54" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div  className = "displayingContent">
+            <iframe  width="560" height="315" src="https://www.youtube.com/embed/dEM7tiOym54" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         );
     }
@@ -27,8 +27,8 @@ typeOfDisplay(typeOf){
     }
    else if (typeOf === "Text") {
         return(
-        <div>     
-            <h4 className = "forDisplays"  > [Part I: Self Care]
+        <div  className = "displayingContent marginsForLyrics">     
+            <h4  > [Part I: Self Care]
 
 [Intro: Mac Miller]
 Mhm, mhm
@@ -149,8 +149,8 @@ Oblivion, yeah, yeah</h4>
     
     else if (typeOf === "Image") {
         return(
-        <div>
-            <img alt = "mac miller" className = "forDisplays" src = {picOfMacMiller}></img>
+        <div  className = "displayingContent">
+            <img alt = "mac miller" className = "macMillerImg" src = {picOfMacMiller}></img>
         </div>
         );
     }

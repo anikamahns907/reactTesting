@@ -5,7 +5,7 @@ import Colors from './components/Colors'
 import PrintSomething from './components/PrintSomething'
 import Images from './components/Images'
 import VidTextPic from './components/VidTextPic'
-import logo from "./components/actualLogo.jpg"
+import logoSwim from "./components/actualLogo.jpg"
 
 
 var favColors = ["#ACDFE0", "#A2CF9F", "#F0D6F1", "#FC2751", "#0636A4"]
@@ -253,31 +253,36 @@ class App extends React.Component {
         <button onClick={() => this.changeNum(2) }> 2 images </button>
         <button onClick={()=> this.changeNum(3)  }> 3 images </button> 
         <Images numberOfPictures = {this.state.numberPics} />
-        <h1 className = "header" > Mac Miller Collection </h1>   <VidTextPic typeOfDisplay = '4' />
+        {/* <h1 className = "header" > Mac Miller Collection </h1>   <VidTextPic typeOfDisplay = '4' />
         <h6 className = "portray">CLICK FOR DISPLAYS</h6>
         <h3 className = "forButton">  <a href="https://genius.com/artists/Mac-miller" >Profile </a></h3>
         <h3 className = "forButtonOne" onClick={() => this.whichOne("Video") }> Video </h3>
         <h3 className = "forButtonTwo"  onClick={() => this.whichOne("Text") }> Self Care lyrics </h3>
         <h3 className = "forButtonThree"  onClick={()=> this.whichOne("Image")  }> Image </h3> 
-        <VidTextPic typeOfDisplay = {this.state.whichType} />
-
+        <VidTextPic typeOfDisplay = {this.state.whichType} /> */}
+        
+        {/* Mac Miller Section */}
         <div className="macMillerOuterDiv">
-          <div className="headerDiv">
-            <div className="headerText">
-              <h1 className = "mainMacHeaderS" > Mac Miller Collection </h1>
-              <h6 className = "subtitleMacS">CLICK FOR DISPLAYS</h6>
-            </div>
-            <img  alt = "mac miller" className = "logoImgS" src = {logo}></img>
+          <div className="headerDivOuter">
+            <div className="headerDiv">
+              <div className="headerText">
+                <h1 className = "mainMacHeaderS" > Mac Miller Collection </h1>
+                <h6 className = "subtitleMacS">CLICK FOR DISPLAYS</h6>
+              </div>
+              <div classname="outerDivForImg">
+                <img  src={logoSwim} className="logoImS"></img>
+              </div>
+              </div>
           </div>
           <div className="buttonDiv">
             <h3> 
-              <a href="https://genius.com/artists/Mac-miller" >Profile </a>
+              <a  className="menuText" href="https://genius.com/artists/Mac-miller" >Profile </a>
             </h3>
-            <h3 onClick={() => this.whichOne("Video") }> Video </h3>
-            <h3 onClick={() => this.whichOne("Text") }> Self Care lyrics </h3>
-            <h3 onClick={()=> this.whichOne("Image")  }> Image </h3> 
+            <h3 className="menuText" onClick={() => this.whichOne("Video") }> Video </h3>
+            <h3 className="menuText" onClick={() => this.whichOne("Text") }> Self Care lyrics </h3>
+            <h3 className="menuText" onClick={()=> this.whichOne("Image")  }> Image </h3> 
           </div>
-          <VidTextPic typeOfDisplay = {this.state.whichType} />
+          <VidTextPic className="displayingContent" typeOfDisplay = {this.state.whichType} />
         </div>
 
         
