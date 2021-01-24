@@ -4,7 +4,8 @@ import axios from 'axios';
 import Colors from './components/Colors'
 import PrintSomething from './components/PrintSomething'
 import Images from './components/Images'
-
+import VidTextPic from './components/VidTextPic'
+import logo from "./components/actualLogo.jpg"
 
 
 var favColors = ["#ACDFE0", "#A2CF9F", "#F0D6F1", "#FC2751", "#0636A4"]
@@ -13,7 +14,7 @@ var favColors = ["#ACDFE0", "#A2CF9F", "#F0D6F1", "#FC2751", "#0636A4"]
 class App extends React.Component {
   constructor(props){
     super(props)
-    this.state = {name: "joe", age: 4, greeting: "I just pooped", hairCut: "", jacob: "", colorNum: 0, catFact: "", covidFact: "", countryName: "pooop", countryCases: 0, askJoke: "", answerJoke: "", setArray: 0}
+    this.state = {name: "joe", age: 4, greeting: "I just pooped", hairCut: "", jacob: "", colorNum: 0, catFact: "", covidFact: "", countryName: "pooop", countryCases: 0, askJoke: "", answerJoke: "", setArray: 0, numberPics: 1, whichType: null}
     
   }
 
@@ -188,7 +189,13 @@ class App extends React.Component {
     });
     
   }
+  changeNum(num) {
+      this.setState({numberPics: num})
+  }
 
+  whichOne(type) {
+    this.setState({whichType: type});
+  }
 
   render() {
     return(
@@ -204,7 +211,7 @@ class App extends React.Component {
         <br/>
         <br/>
 
-
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/oupEFDaHeJo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
        
         <h1 className= "makePurple" onClick={()=> this.printSomething("welcome")}>Welcome to my crib</h1>
         <h5 className= "makeRed" onClick={()=> this.printSomething("sat 1440")}>sat 1440</h5>
@@ -242,11 +249,39 @@ class App extends React.Component {
         <h2>Q: {this.state.askJoke}</h2> 
         <button onClick={()=> this.jokingAnswer()}>answer </button> 
         <h3 className = "makeRed" >A: {this.state.answerJoke} &#128514; </h3>
-        <button> 1 image </button>
-        <button> 2 images </button>
-        <button> 3 images </button>
-         
-         <Images numberOfPictures = '1' />
+        <button onClick={() => this.changeNum(1) }> 1 image </button>
+        <button onClick={() => this.changeNum(2) }> 2 images </button>
+        <button onClick={()=> this.changeNum(3)  }> 3 images </button> 
+        <Images numberOfPictures = {this.state.numberPics} />
+        <h1 className = "header" > Mac Miller Collection </h1>   <VidTextPic typeOfDisplay = '4' />
+        <h6 className = "portray">CLICK FOR DISPLAYS</h6>
+        <h3 className = "forButton">  <a href="https://genius.com/artists/Mac-miller" >Profile </a></h3>
+        <h3 className = "forButtonOne" onClick={() => this.whichOne("Video") }> Video </h3>
+        <h3 className = "forButtonTwo"  onClick={() => this.whichOne("Text") }> Self Care lyrics </h3>
+        <h3 className = "forButtonThree"  onClick={()=> this.whichOne("Image")  }> Image </h3> 
+        <VidTextPic typeOfDisplay = {this.state.whichType} />
+
+        <div className="macMillerOuterDiv">
+          <div className="headerDiv">
+            <div className="headerText">
+              <h1 className = "mainMacHeaderS" > Mac Miller Collection </h1>
+              <h6 className = "subtitleMacS">CLICK FOR DISPLAYS</h6>
+            </div>
+            <img  alt = "mac miller" className = "logoImgS" src = {logo}></img>
+          </div>
+          <div className="buttonDiv">
+            <h3> 
+              <a href="https://genius.com/artists/Mac-miller" >Profile </a>
+            </h3>
+            <h3 onClick={() => this.whichOne("Video") }> Video </h3>
+            <h3 onClick={() => this.whichOne("Text") }> Self Care lyrics </h3>
+            <h3 onClick={()=> this.whichOne("Image")  }> Image </h3> 
+          </div>
+          <VidTextPic typeOfDisplay = {this.state.whichType} />
+        </div>
+
+        
+
 
       </div>
 
